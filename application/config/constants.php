@@ -36,6 +36,22 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
+/*
+ |--------------------------------------------------------------------------
+| Custom
+|--------------------------------------------------------------------------
+|
+*/
 
+define('IMAGES','resources/img/');
+define('JS','resources/js/');
+define('CSS','resources/css/');
+define('UPLOAD','resources/upload/');
+define('ASSETS','resources/assets/');
+define('LODSPEAKR', 'http://visko.cybershare.utep.edu/linked-data/');
+define('ONTPREFIX', 'http://ontology.cybershare.utep.edu/ELSEWeb/');
+define("ENDPOINT", 'http://visko.cybershare.utep.edu/elseweb-endpoint/');
+define('VISKOSERVER', 'http://visko.cybershare.utep.edu/');
+//define('ADMIN','resources/dashboard/');
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

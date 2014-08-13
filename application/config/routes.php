@@ -38,8 +38,13 @@
 |
 */
 
-$route['default_controller'] = "skeleton";
+$route['default_controller'] = "home";
 $route['404_override'] = '';
+//$route['dashboard'] = 'admin/dashboard';
+//$route['dashboard/login'] = 'admin/dashboard/login';
+//$route['dashboard/create'] = 'admin/create';
+//$route['dashboard/view'] = 'admin/view';
+
 
 
 /* End of file routes.php */

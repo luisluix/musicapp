@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
+$db['default']['hostname'] = 'hackathon2014b.db.10388631.hostedresource.com';
+$db['default']['username'] = 'hackathon2014b';
+$db['default']['password'] = 'Batalle!2014';
+$db['default']['database'] = 'hackathon2014b';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
