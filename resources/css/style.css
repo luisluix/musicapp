@@ -18,6 +18,13 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 50px;
+
+     margin: 0;
+     background: url('DigitalVenue_SplashScreen.png');
+     background-size: 800px 1280px;
+     background-repeat:no-repeat;
+     display: compact;
+     font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #footer {
