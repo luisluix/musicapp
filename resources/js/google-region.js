@@ -16,6 +16,7 @@
         
          $( "#countriesDrp" ).change(function(base_url) {
             var value = document.getElementById("countriesDrp").value;
+            if (value !== ""){
                 $.ajax({
                     //need to do a cross domain post
                     'url' : 'Venue/getVenueInfo',
@@ -33,6 +34,7 @@
                     }
                     
                 });  
+            }
             
          });
 

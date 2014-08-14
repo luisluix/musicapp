@@ -11,11 +11,8 @@ class Music extends MY_Controller {
          
          
 		$this->title = "Digital-Venue | Music";
-<<<<<<< HEAD
-		$this->keywords = "";
-=======
 		$this->keywords = "music venues, bands, fun";
->>>>>>> 9227d260535f7804c6ba292da2e90afddb89050b
+
 		
         // 1. when you pass AJAX to renderData it will generate only that particular PAGE skipping other parts like header, nav bar,etc.,
         //      this can be used for AJAX Responses

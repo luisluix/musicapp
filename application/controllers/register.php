@@ -14,7 +14,8 @@ class Register extends MY_Controller{
 		 *set up title and keywords (if not the default in custom.php config file will be set) 
 		 */
          
-         $this->title = "ELSEWeb | Registration";
+        $this->title = "Digital-Venue | Music";
+	$this->keywords = "music venues, bands, fun";
 		
 		
         // 1. when you pass AJAX to renderData it will generate only that particular PAGE skipping other parts like header, nav bar,etc.,
