@@ -13,8 +13,6 @@
     <!-- Bootstrap core CSS -->
 
     <link rel="stylesheet" href="<?php echo base_url(CSS."bootstrap.min.css");?>">
-    <link rel="stylesheet" href="<?php echo base_url(CSS."theme.css");?>">
-    <link rel="stylesheet" href="<?php echo base_url(CSS."bootstrap-reset.css");?>">
 
     
     <!--external css-->
@@ -30,9 +28,6 @@
     
     <link href="<?php echo base_url(ASSETS."jquery-ui/css/custom-theme/jquery-ui-1.10.4.custom.min.css");?>" rel="stylesheet" />
 
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="<?php echo base_url(CSS."style.css");?>">
-    <link rel="stylesheet" href="<?php echo base_url(CSS."style-responsive.css");?>">
     
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->

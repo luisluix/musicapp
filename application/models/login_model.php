@@ -22,9 +22,9 @@ class Login_model extends CI_Model {
     
     public function login_user($username,$password)
     {
-        $this->db->where('Uusername',$username);
-        $this->db->where('Upassword',$password);
-        $query = $this->db->get('USER'); //Table name USER
+        $this->db->where('username',$username);
+        $this->db->where('password',$password);
+        $query = $this->db->get('User'); //Table name USER
         if($query->num_rows() == 1)
         {
             return $query->row();
