@@ -14,7 +14,7 @@
         <div class="row">
             <!--feature start-->
             <div class="text-center feature-head">
-                <h2>Experiment GUI</h2>
+                <h2>Venues</h2>
             </div>
             <!--feature end-->     
         </div>
@@ -67,89 +67,11 @@
                              <h4>Data</h4>
                              <p class="">Select up to 10 data sets</p>
                              <div><button ng-click="dataCrtl.addDataSet()" type="button" class="btn btn-purchase" >+ Add data set</button></div>
-                             <div class="eq-len">
-                                  <table id="dataInputs" class="table table-striped">
-                                      <thead>
-                                          <th>Start</th>   
-                                          <th>End</th>   
-                                          <th>Entity</th>   
-                                          <th>Characteristic</th>   
-                                          <th>Source</th>
-                                      </thead>
-                                      <tbody>
-                                          <tr ng-repeat = "dataset in datasets" >
-                                              <td><input  ng-model="dataset.start" class="form-control blck-input datepicker" type="text" /></td>
-                                              <td><input ng-model="dataset.end" class="form-control blck-input datepicker" type="text" /></td>
-                                              <td>
-                                                  <select ng-change="dataCrtl.filterCharacteristics(dataset)" ng-options="o.entity.value as o.entity.value.slice(59)  for o in datasetOptions | unique:'entity.value'" ng-model="dataset.entity" class="form-control blck-input selEnt">
-                                                      <option style="display:none" value="">select...</option>
-                                                  </select>
-                                              </td>
-                                              <td>
-                                                  <select ng-change="dataCrtl.filterSources(dataset)" ng-options="o.char.value as o.char.value.slice(59) for o in filteredChars[$index].items" ng-model="dataset.characteristic" class="form-control blck-input selEnt">
-                                                      <option style="display:none" value="">select...</option>
-                                                  </select>                                                  
-                                              </td>
-                                              <td>
-                                                  <select ng-options="o.source.value as o.source.value.slice(59) for o in filteredSources[$index].items" ng-model="dataset.source" class="form-control blck-input selEnt">
-                                                      <option style="display:none" value="">select...</option>
-                                                  </select>                                                                                   
-                                              </td>
-                                              <td style="text-align:center; vertical-align: middle;">
-                                                  <button type="button" class="btn btn-purchase btn-xs"><span ng-click="dataCrtl.deleteDataset(dataset)" class="glyphicon glyphicon-remove"></span></button>
-                                              </td>
-                                              
-                                          </tr>
-                                      </tbody>    
-                                  </table>
-                             </div>
+                             
                          </div>
                      </div>
                 </div>    
 
-                <div class="tab-panel" ng-show="panel.isSelected(4)">
-                     <div class="row experiment-row" ng-controller="AlgorithmController as algorithmCrtl"> 
-                         <div class="col-md-12 gray-bg">
-                             <h4>Algorithm</h4>
-                             <p>Select algorithm and modify parameters values (default value shown)</p>
-                             <div class="col-md-2" style="vertical-align: text-bottom">
-                                  <h5>Algorithm:</h5>
-                             </div>  
-                             <div class="col-md-10">
-                                  <form>
-                                       <div class="form-group">
-                                           <select  ng-options="a.algorithmURI.value as a.algorithmName.value for a in algorithms" ng-model="experiment.algorithm" ng-change="algorithmCrtl.populateParameter()" name="selectAlgorithm" class="form-control blck-input">
-                                               <option style="display:none" value="">select...</option> 
-                                           </select>
-                                       </div>
-                                   </form> 
-                             </div>
-                             <div class="eq-len">
-                                  <table id="algorithmParams" class="table table-striped">
-                                      <thead>
-                                          <th>Parameter</th>   
-                                          <th>Value</th>   
-                                          <th>Min</th>   
-                                          <th>Max</th>   
-                                          <th>Type</th>
-                                      </thead>
-                                      <tbody>
-                                          <tr ng-repeat = "row in filteredparams.items">
-                                              <td>{{row.paramName.value}}</td>       
-                                              <td> 
-                                                  <input class="form-control blck-input" type="number" min="{{row.minimos.value}}" max="{{row.maximos.value}}"
-                                                         ng-model="row.default.value" placeholder="{{row.default.value}}"/>
-                                              </td>  
-                                              <td>{{row.minimos.value}}</td>  
-                                              <td>{{row.maximos.value}}</td>  
-                                              <td>{{row.datatype.value.slice(33)}}</td>  
-                                          </tr>
-                                      </tbody>    
-                                  </table>
-                             </div>
-                         </div>
-                     </div>
-                </div>  
                
                <div class="tab-panel" ng-show="panel.isSelected(5)">
                     <div class="row experiment-row">

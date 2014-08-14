@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Experimentgui extends MY_Controller {
+class Venue extends MY_Controller {
 	
     
 	public function index($renderData=""){	
@@ -18,16 +18,9 @@ class Experimentgui extends MY_Controller {
         // 2. when you pass JSON , then the response will be json object of $this->data.  This can be used for JSON Responses to AJAX Calls.
         // 3. By default full page will be rendered
                 
-            if ($this->session->userdata('is_logged_in')){          
+           
                 $folder = 'template';
-                $this->_render('pages/experiment-gui',$renderData, $folder);     
-            }
-            else{
-                $folder = 'template';
-                $this->_render('pages/register',$renderData, $folder);   //to be changed
-
-            }
-        
+                $this->_render('pages/venue',$renderData, $folder); 
         }    
 }
 

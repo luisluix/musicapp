@@ -11,7 +11,7 @@
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
                         <li class="<?php echo isActive($pageName,"home")?>"><a href="<?php echo site_url('home') ?>">Home</a></li>
-                        <li class="<?php echo isActive($pageName,"venues")?>"><a href="<?php echo site_url('experiments') ?>">Venues</a></li>
+                        <li class="<?php echo isActive($pageName,"venue")?>"><a href="<?php echo site_url('venue') ?>">Venues</a></li>
                         <li class="<?php echo isActive($pageName,"events")?>"><a href="<?php echo site_url('experiments') ?>">Events</a></li>
                         <li class="<?php echo isActive($pageName,"events")?>"><a href="<?php echo site_url('experiments') ?>">Artists</a></li>
                         <?php if(!$this->session->userdata('is_logged_in')) { ?>
