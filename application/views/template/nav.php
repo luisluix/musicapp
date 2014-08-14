@@ -12,8 +12,8 @@
                     <ul class="nav navbar-nav">
                         <li class="<?php echo isActive($pageName,"home")?>"><a href="<?php echo site_url('home') ?>">Home</a></li>
                         <li class="<?php echo isActive($pageName,"venue")?>"><a href="<?php echo site_url('venue') ?>">Venues</a></li>
-                        <li class="<?php echo isActive($pageName,"events")?>"><a href="<?php echo site_url('experiments') ?>">Events</a></li>
-                        <li class="<?php echo isActive($pageName,"artists")?>"><a href="<?php echo site_url('experiments') ?>">Artists</a></li>
+                        <li class="<?php echo isActive($pageName,"events")?>"><a href="<?php echo site_url('') ?>">Events</a></li>
+                        <li class="<?php echo isActive($pageName,"artists")?>"><a href="<?php echo site_url('') ?>">Artists</a></li>
                         <?php if(!$this->session->userdata('is_logged_in')) { ?>
                         <li class="dropdown <?php echo isActive($pageName,"login/new_user")?>" id="menuLogin">
                           <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login <b class="caret"></b></a>
