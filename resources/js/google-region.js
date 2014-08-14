@@ -13,6 +13,26 @@
     var app = angular.module ('region-ui', []);
   
     app.controller('RegionController', ['$http' , '$scope', function($http, $scope){
+        
+         $( "#countriesDrp" ).change(function(base_url) {
+            var value = document.getElementById("countriesDrp").value;
+                $.ajax({
+                    //need to do a cross domain post
+                    'url' : base_url + '/' + 'getVenueInfo',
+                    'type' : 'GET', //the way you want to send data to your URL
+                    'data' : 'venueID=' + value, 
+                    'success' : function(result){ 
+                        if(result){             
+                                //Merge experiment and result json
+                                addmarker(result.lat, result.long);
+                        }
+                        else
+                            topNoty('error', 'An error has ocurred.');
+                    }
+                    
+                });  
+            
+         });
 
          
          //Hide data notification messages

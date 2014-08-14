@@ -7,6 +7,7 @@
     <script src="<?php echo base_url(JS."lodash.underscore.min.js");?>"></script>
     <script src="<?php echo base_url(JS."experiment-gui.js");?>"></script>
     <script src="<?php echo base_url(JS."endpoint.js");?>"></script>
+    <script src="<?php echo base_url(JS."venues.js");?>"></script>
 
    <!--container start-->
    <div id="endpoint_container" class="container" ng-app="elsewebGUI">
@@ -23,7 +24,7 @@
       <div class="row" ng-controller="PanelController as panel">
         
            <div class="col-md-7 gray-bg">
-                <div class="tab-panel" ng-show="panel.isSelected(1)" ng-controller="RegionController as regionCtrl"> 
+                <div class="tab-panel" ng-controller="RegionController as regionCtrl"> 
                      <div class="row">
                           <div class="col-md-12 gray-bg" style="padding-bottom: 15px; border-radius: 3px;">
                               <h4>Region</h4>

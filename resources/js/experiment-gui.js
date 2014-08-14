@@ -13,7 +13,7 @@
      * region-ui: google map creation and handlers
      * spec-factory: Experiment specification assembly factory
      */
-    var app = angular.module('elsewebGUI', ['ui.utils', 'ui.bootstrap', 'region-ui', 'spec-factory']);
+    var app = angular.module('elsewebGUI', ['ui.utils', 'ui.bootstrap', 'region-ui', 'spec-factory', 'venueGUI']);
         
     /* Global variables */
     var url = "http://visko.cybershare.utep.edu/sparql?default-graph-uri=&query=";    
