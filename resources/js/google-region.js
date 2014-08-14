@@ -18,12 +18,15 @@
             var value = document.getElementById("countriesDrp").value;
                 $.ajax({
                     //need to do a cross domain post
-                    'url' : base_url + '/' + 'getVenueInfo',
+                    'url' : 'Venue/getVenueInfo',
                     'type' : 'GET', //the way you want to send data to your URL
                     'data' : 'venueID=' + value, 
                     'success' : function(result){ 
                         if(result){             
                                 //Merge experiment and result json
+                                alert(result.lat);
+                                alert(result.long);
+                                alert(JSON.stringify(result));
                                 addmarker(result.lat, result.long);
                         }
                         else
