@@ -12,7 +12,7 @@
     {
         var myLatlng = new google.maps.LatLng(lat,long);
         var mapOptions = {
-          zoom: 4,
+          zoom: 13,
           center: myLatlng
         }
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -45,7 +45,7 @@
                               <p>Select Venue</p>
                               <div class="btn-group">
                                        
-                         <?php echo form_dropdown('countriesDrp', $venueDrop,'','class="required" id="countriesDrp"');  ?>
+                         <?php echo form_dropdown('countriesDrp', $venueDrop,'','class="required form-control" id="countriesDrp"');  ?>
                   
 </div>
                           </div>

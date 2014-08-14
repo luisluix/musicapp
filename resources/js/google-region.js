@@ -24,10 +24,9 @@
                     'success' : function(result){ 
                         if(result){             
                                 //Merge experiment and result json
-                                alert(result.lat);
-                                alert(result.long);
-                                alert(JSON.stringify(result));
-                                addmarker(result.lat, result.long);
+                                parsed = $.parseJSON(result); //string to manipulable json
+                                //alert(parsed["lat"]); 
+                                addmarker(parsed.lat, parsed.long);
                         }
                         else
                             topNoty('error', 'An error has ocurred.');
