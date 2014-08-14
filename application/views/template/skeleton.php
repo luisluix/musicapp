@@ -28,7 +28,7 @@
     
     <link href="<?php echo base_url(ASSETS."jquery-ui/css/custom-theme/jquery-ui-1.10.4.custom.min.css");?>" rel="stylesheet" />
 
-    
+     <link rel="stylesheet" href="<?php echo base_url(CSS."style.css");?>">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
