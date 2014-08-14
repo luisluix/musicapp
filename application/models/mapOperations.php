@@ -7,7 +7,7 @@
  *  
  *  */
 
-class Login_model extends CI_Model {
+class mapOperations extends CI_Model {
     
     public function __construct() {
         parent::__construct();
@@ -20,11 +20,10 @@ class Login_model extends CI_Model {
     *              database and returns a user row if successful.
     * */
     
-    public function login_user($username,$password)
+    public function lookVenue($venueName)
     {
-        $this->db->where('username',$username);
-        $this->db->where('password',$password);
-        $query = $this->db->get('User'); //Table name USER
+        $this->db->where('name',$username);
+        $query = $this->db->get('Venue'); //Table name Venue
         if($query->num_rows() == 1)
         {
             return $query->row();
@@ -34,102 +33,16 @@ class Login_model extends CI_Model {
         }
     }
     
-    
-   /*
-    * Function: add_user
-    * Description: Inserts user registration data into DB, discipline and organization
-    *              are tables are checked in order to prevent data repetition.
-    * */
-    
-    
-    public function add_user($username,$password, $email, $discipline, $organization)
+     public function getAllVenues()
     {
-       
-       try{ 
-            //Begin the transaction
-            $this->db->trans_start();
-            $Dis_exits = $this->checkExistance('DISCIPLINE', 'Dname', $discipline);
-            if ($Dis_exits == false){ 
-                $data=array(
-                   'Dname'=>$discipline
-                );
-                $this->db->insert('DISCIPLINE',$data);
-                
-                //Get last inserted Discipline
-                $this->db->select_max('Did');
-                $query = $this->db->get('DISCIPLINE');
-                $Did = $query->row()->Did;
-            }
-            else{
-                $Did = $Dis_exits->row()->Did;
-            }
-                
-          
-            $Org_exits = $this->checkExistance('ORGANIZATION', 'Oname', $organization);
-            if ($Org_exits == false){ 
-                $data=array(
-                    'Oname'=>$organization
-                 );
-                 $this->db->insert('ORGANIZATION',$data);
-
-                 //Get last inserted Organization
-                 $this->db->select_max('Oid');
-                 $query = $this->db->get('ORGANIZATION');
-                 $Oid = $query->row()->Oid;
-                
-            }
-            else{
-                $Oid = $Org_exits->row()->Oid;
-            }
-
-            $data=array(
-               'Uusername'=>$username,
-               'Did_FK'=>$Did,
-               'Oid_FK'=>$Oid,
-               'Upassword'=>$password,
-               'Uemail'=>$email
-            );
-            
-            $this->db->set('Ureg_date', 'NOW()', FALSE);
-            $this->db->insert('USER',$data);
-
-            //End of transaction
-            $this->db->trans_complete();
-       }
-       catch (Exception $e) {
-            echo ('error: '.$e->getMessage());  
-            return;
-       }
-
-       if ($this->db->trans_status() == TRUE){
-           return true;
-       }
-       else{
-           return false;
-       }
-   
-    }
-    
-    
-   /*
-    * Function: checkExistance
-    * Description: Checks if received value exists on the designated column and table,
-    *              returns false if the value is not found.
-    * */
-    
-    private function checkExistance ($tablename, $columnname, $value){
-        $this->db->select('*');
-        $this->db->like($columnname,$value);
-        $query=$this->db->get($tablename);
-        $result=$query->result_array();
-        if(count($result))
-        {
-        return $query;
+        $this->db->select('name,idVenue');
+        $this->db->from('Venue'); 
+        $query = $this->db->get();
+        
+         foreach($query->result_array() as $row){
+            $data[$row['idVenue']]=$row['name'];
         }
-        else
-        {
-        return FALSE;
-        }
+        return $data;
     }
     
 }
