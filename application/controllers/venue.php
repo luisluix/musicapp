@@ -1,16 +1,25 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Venue extends MY_Controller {
-	
+    public function __construct()
+    {
+        parent::__construct();
+        
+        $this->load->database();
+        $this->load->helper('url');
+        $this->load->helper('form');
+        $this->load->model('mapOperations');
+    
+    }
     
 	public function index($renderData=""){	
                 //$this->$data['token'] = $this->token();
 		/*
 		 *set up title and keywords (if not the default in custom.php config file will be set) 
 		 */
-         
-         
-		$this->title = "ELSEWeb | Experiment GUI";
+                $this->data['venueDrop'] = $this->mapOperations->getAllVenues();
+		
+                $this->title = "ELSEWeb | Experiment GUI";
 		$this->keywords = "elseweb, cybershare, species modeling, species modelling";
 		
         // 1. when you pass AJAX to renderData it will generate only that particular PAGE skipping other parts like header, nav bar,etc.,
@@ -20,7 +29,9 @@ class Venue extends MY_Controller {
                 
            
                 $folder = 'template';
-                $this->_render('pages/venue',$renderData, $folder); 
-        }    
+              // $this->load->view('pages/venue', $data,$folder);
+
+             $this->_render('pages/venue',$renderData, $folder); 
+        }
 }
 
