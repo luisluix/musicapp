@@ -10,8 +10,8 @@ class Home extends MY_Controller {
 		 */
          
          
-		$this->title = "ELSEWeb | Home";
-		$this->keywords = "elseweb, cybershare, species modeling, species modelling";
+		$this->title = "Digital-Venue | Home";
+		$this->keywords = "music venues, bands, fun";
 		
         // 1. when you pass AJAX to renderData it will generate only that particular PAGE skipping other parts like header, nav bar,etc.,
         //      this can be used for AJAX Responses

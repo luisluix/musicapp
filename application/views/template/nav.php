@@ -6,14 +6,14 @@
                         <span class="icon-bar"></span>
                     </button>
                     
-                    <a class="navbar-brand" href="<?php echo site_url('home')?>">DIGITAL<span>Venue</span></a>
+                    <a class="navbar-brand" href="<?php echo site_url('home')?>">DIGITAL-<span>Venue</span></a>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
                         <li class="<?php echo isActive($pageName,"home")?>"><a href="<?php echo site_url('home') ?>">Home</a></li>
                         <li class="<?php echo isActive($pageName,"venue")?>"><a href="<?php echo site_url('venue') ?>">Venues</a></li>
                         <li class="<?php echo isActive($pageName,"events")?>"><a href="<?php echo site_url('experiments') ?>">Events</a></li>
-                        <li class="<?php echo isActive($pageName,"events")?>"><a href="<?php echo site_url('experiments') ?>">Artists</a></li>
+                        <li class="<?php echo isActive($pageName,"artists")?>"><a href="<?php echo site_url('experiments') ?>">Artists</a></li>
                         <?php if(!$this->session->userdata('is_logged_in')) { ?>
                         <li class="dropdown <?php echo isActive($pageName,"login/new_user")?>" id="menuLogin">
                           <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login <b class="caret"></b></a>
@@ -31,16 +31,15 @@
                               <hr/>
                               <!-- <input type="button" value="Forgot Username or Password?"  class="btn-small btn-default"/> -->
                               <input type="button" value="Login"  class="btn-small btn-default pull-right" onclick="userLogin('<?php echo site_url('login')?>')"/>
-                              <a href="<?php echo site_url('register')?>">
+                              <!-- <a href="<?php echo site_url('register')?>">
                                   <input type="button" style="margin-right: 10px;" value="Register"  class="btn-small btn-default pull-right"/>
-                              </a>
+                              </a> -->
                           </div>
                         </li>
                        <?php } else {?>
                        <li class="dropdown" id="userMenu">  
                             <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="userName"><?php echo $this->session->userdata('username') ?> <b class="caret"></b></a>    
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo site_url('history') ?>">Experiment History</a></li>
                                 <li><a href="<?php echo site_url('login/logout_ci') ?>">Logout</a></li>                             
                             </ul>
                        </li> 
