@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Music extends MY_Controller {
+class Event extends MY_Controller {
 	
     
 	public function index($renderData=""){	
@@ -10,12 +10,8 @@ class Music extends MY_Controller {
 		 */
          
          
-		$this->title = "Digital-Venue | Music";
-<<<<<<< HEAD
-		$this->keywords = "";
-=======
+		$this->title = "Digital-Venue | Event";
 		$this->keywords = "music venues, bands, fun";
->>>>>>> 9227d260535f7804c6ba292da2e90afddb89050b
 		
         // 1. when you pass AJAX to renderData it will generate only that particular PAGE skipping other parts like header, nav bar,etc.,
         //      this can be used for AJAX Responses
@@ -24,7 +20,7 @@ class Music extends MY_Controller {
                 
            
                 $folder = 'template';
-                $this->_render('pages/music',$renderData, $folder); 
+                $this->_render('pages/event',$renderData, $folder); 
         }    
 }
 
