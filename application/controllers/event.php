@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Date extends MY_Controller {
+class Event extends MY_Controller {
 	
     
 	public function index($renderData=""){	
@@ -10,7 +10,7 @@ class Date extends MY_Controller {
 		 */
          
          
-		$this->title = "Digital-Venue | Home";
+		$this->title = "Digital-Venue | Event";
 		$this->keywords = "music venues, bands, fun";
 		
         // 1. when you pass AJAX to renderData it will generate only that particular PAGE skipping other parts like header, nav bar,etc.,
@@ -20,7 +20,7 @@ class Date extends MY_Controller {
                 
            
                 $folder = 'template';
-                $this->_render('pages/date',$renderData, $folder); 
+                $this->_render('pages/event',$renderData, $folder); 
         }    
 }
 

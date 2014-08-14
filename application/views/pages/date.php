@@ -10,19 +10,26 @@
      <!--property start-->
     <div class="property gray-bg">
         <div class="container">
-            <p>Find out where the party is at. Go out tonight! Search where you want to go, when you want to go, quick and easy with Digital Venue!</p>
+            <p>Tell us when you want to go out, and we will find a place and band you will love!</p>
             <div class="row">
-                <!-- Columns are always 50% wide, on mobile and desktop -->
-                <div class="col-xs-6"><img src="resources/img/date.png" height="128" width="128" class="img-thumbnail"></div>
-                <div class="col-xs-6"><img src="resources/img/event.png" height="128" width="128" class="img-thumbnail"></div>
-                <div class="col-xs-6"><p>Date</p></div>
-                <div class="col-xs-6"><p>Event</p></div>
-                <div class="col-xs-6"><img src="resources/img/venue.png" height="128" width="128" class="img-thumbnail"></div>
-                <div class="col-xs-6"><img src="resources/img/music.png" height="128" width="128" class="img-thumbnail"></div>
-                <div class="col-xs-6"><p>Venue</p></div>
-                <div class="col-xs-6"><p>Music</p></div> 
+		<div class='col-sm-6'>
+			<div class="form-group">
+				<div class='input-group date' id='datetimepicker'>
+					<input type='text' class="form-control" data-date-format="MM/DD/YYYY"/>
+					<span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar"></span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function () {
+				$('#datetimepicker').datetimepicker({
+					pickTime: false
+				});
+			});
+		</script>
             </div>
         </div>
-    </div>
     </div>
     <!--property end-->
