@@ -11,7 +11,7 @@
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
                         <li class="<?php echo isActive($pageName,"home")?>"><a href="<?php echo site_url('home') ?>">Home</a></li>
-                        <li class="<?php echo isActive($pageName,"venues")?>"><a href="<?php echo site_url('experiments') ?>">Venues</a></li>
+                        <li class="<?php echo isActive($pageName,"venue")?>"><a href="<?php echo site_url('venue') ?>">Venues</a></li>
                         <li class="<?php echo isActive($pageName,"events")?>"><a href="<?php echo site_url('experiments') ?>">Events</a></li>
                         <li class="<?php echo isActive($pageName,"artists")?>"><a href="<?php echo site_url('experiments') ?>">Artists</a></li>
                         <?php if(!$this->session->userdata('is_logged_in')) { ?>
@@ -40,6 +40,9 @@
                        <li class="dropdown" id="userMenu">  
                             <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="userName"><?php echo $this->session->userdata('username') ?> <b class="caret"></b></a>    
                             <ul class="dropdown-menu">
+                                <li><a href="<?php echo site_url('admin_venue') ?>">Manage Venues</a></li>
+                                <li><a href="<?php echo site_url('admin_events') ?>">Manage Events</a></li>
+                                <li><a href="<?php echo site_url('admin_artists') ?>">Manage Artists</a></li>
                                 <li><a href="<?php echo site_url('login/logout_ci') ?>">Logout</a></li>                             
                             </ul>
                        </li> 
