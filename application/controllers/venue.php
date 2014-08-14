@@ -33,5 +33,11 @@ class Venue extends MY_Controller {
 
              $this->_render('pages/venue',$renderData, $folder); 
         }
+        public function getVenueInfo(){	
+            $venueID=$this->input->get('venueID', TRUE);
+            $tempVenue = $this->mapOperations->lookVenue($venueID);
+            $this->data['venueInfo']=  json_encode($tempVenue);
+            echo $this->data['venueInfo'];
+        }
 }
 

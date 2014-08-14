@@ -7,7 +7,22 @@
     <script src="<?php echo base_url(JS."lodash.underscore.min.js");?>"></script>
     <script src="<?php echo base_url(JS."experiment-gui.js");?>"></script>
     <script src="<?php echo base_url(JS."endpoint.js");?>"></script>
+    <script type="text/javascript">
+    function addmarker(lat,long)
+    {
+        var myLatlng = new google.maps.LatLng(lat,long);
+        var mapOptions = {
+          zoom: 4,
+          center: myLatlng
+        }
+        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map
+        });
+    }
+    </script>
    <!--container start-->
    <div id="endpoint_container" class="container" ng-app="elsewebGUI">
 
