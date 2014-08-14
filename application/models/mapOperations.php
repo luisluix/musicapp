@@ -20,19 +20,22 @@ class mapOperations extends CI_Model {
     *              database and returns a user row if successful.
     * */
     
-    public function lookVenue($venueName)
+    public function lookVenue($venueID)
     {
-        $this->db->where('name',$username);
+        $this->db->where('idVenue',$venueID);
         $query = $this->db->get('Venue'); //Table name Venue
-        if($query->num_rows() == 1)
-        {
-            return $query->row();
-        }else{
-            $this->session->set_flashdata('incorrect_user','Invalid user/password combination'); //Used for error reporting
-            echo "Invalid user/password combination"; //Response to ajax
-        }
+        foreach($query->result_array() as $row){
+            $data[$row['idVenue']]["name"]=$row['name'];
+            $data[$row['idVenue']]['address']=$row['address'];
+            $data[$row['idVenue']]['lat']=$row['lat'];
+            $data[$row['idVenue']]['long']=$row['long'];
+            $data[$row['idVenue']]['phone']=$row['phone'];
+            $data[$row['idVenue']]['picture']=$row['picture'];
+            $data[$row['idVenue']]['city']=$row['city'];
+       
+            }
+        return $data;
     }
-    
      public function getAllVenues()
     {
         $this->db->select('name,idVenue');
@@ -44,7 +47,7 @@ class mapOperations extends CI_Model {
         }
         return $data;
     }
-    
+
 }
 
 ?>
