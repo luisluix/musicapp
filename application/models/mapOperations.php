@@ -25,13 +25,13 @@ class mapOperations extends CI_Model {
         $this->db->where('idVenue',$venueID);
         $query = $this->db->get('Venue'); //Table name Venue
         foreach($query->result_array() as $row){
-            $data[$row['idVenue']]["name"]=$row['name'];
-            $data[$row['idVenue']]['address']=$row['address'];
-            $data[$row['idVenue']]['lat']=$row['lat'];
-            $data[$row['idVenue']]['long']=$row['long'];
-            $data[$row['idVenue']]['phone']=$row['phone'];
-            $data[$row['idVenue']]['picture']=$row['picture'];
-            $data[$row['idVenue']]['city']=$row['city'];
+            $data["name"]=$row['name'];
+            $data['address']=$row['address'];
+            $data['lat']=$row['lat'];
+            $data['long']=$row['long'];
+            $data['phone']=$row['phone'];
+            $data['picture']=$row['picture'];
+            $data['city']=$row['city'];
        
             }
         return $data;
